@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using static System.Net.Mime.MediaTypeNames;
 
 public class MainMenu : MonoBehaviour
 {
@@ -21,4 +22,21 @@ public class MainMenu : MonoBehaviour
     {
         SceneManager.LoadScene("EscenaMultiplayer");
     }
+
+    public void EscenaOptions()
+    {
+        SceneManager.LoadScene("MenuOptions");
+    }
+
+    public void EscenaMenu()
+    {
+        SceneManager.LoadScene("MenuTanks");
+    }
+
+    public void doExitGame()
+    {
+        UnityEngine.Application.Quit();
+    }
+
+
 }

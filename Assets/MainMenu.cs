@@ -18,19 +18,24 @@ public class MainMenu : MonoBehaviour
         
     }
 
-    public void EscenaJuegoMultiplayer()
+    public void EscenaMultiplayer()
     {
         SceneManager.LoadScene("EscenaMultiplayer");
     }
 
     public void EscenaOptions()
     {
-        SceneManager.LoadScene("MenuOptions");
+        SceneManager.LoadScene("EscenaMenuOptions");
     }
 
     public void EscenaMenu()
     {
-        SceneManager.LoadScene("MenuTanks");
+        SceneManager.LoadScene("EscenaMenuTanks");
+    }
+
+	public void EscenaSingleplayer()
+    {
+        SceneManager.LoadScene("EscenaLevelOne");
     }
 
     public void doExitGame()

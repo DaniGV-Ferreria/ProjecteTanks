@@ -262,4 +262,16 @@ public class GameManager : MonoBehaviour
             m_Tanks[i].DisableControl();
         }
     }
+    //referencia per enviar a un altre metode el jugadors
+    public Transform[] GetPlayerTransforms()
+    {
+        Transform[] playerTransforms = new Transform[m_Tanks.Length];
+        
+        for (int i = 0; i < m_Tanks.Length; i++)
+        {
+            playerTransforms[i] = m_Tanks[i].m_Instance.transform;
+        }
+
+        return playerTransforms;
+    }
 }

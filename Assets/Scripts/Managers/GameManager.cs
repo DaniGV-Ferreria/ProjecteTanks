@@ -264,14 +264,27 @@ public class GameManager : MonoBehaviour
     }
     //referencia per enviar a un altre metode el jugadors
     public Transform[] GetPlayerTransforms()
+{
+    if (m_Tanks == null)
     {
-        Transform[] playerTransforms = new Transform[m_Tanks.Length];
-        
-        for (int i = 0; i < m_Tanks.Length; i++)
+        Debug.LogError("m_Tanks is null. Make sure it's initialized.");
+        return new Transform[0]; // Devuelve un array vacío en caso de error.
+    }
+
+    Transform[] playerTransforms = new Transform[m_Tanks.Length];
+
+    for (int i = 0; i < m_Tanks.Length; i++)
+    {
+        if (m_Tanks[i] != null && m_Tanks[i].m_Instance != null)
         {
             playerTransforms[i] = m_Tanks[i].m_Instance.transform;
         }
-
-        return playerTransforms;
+        else
+        {
+            Debug.LogError("m_Tanks[" + i + "] or m_Tanks[" + i + "].m_Instance is null. Make sure it's initialized.");
+        }
     }
+
+    return playerTransforms;
+}
 }
